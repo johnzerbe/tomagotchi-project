@@ -39,6 +39,7 @@ h1 {
 
 #tomagotchiAnimation {
 	height: 300px;
+	margin: 50px 0 0 0;
 	position: relative;
 	animation: spongebob 7s infinite;
 	animation-direction: alternate;
@@ -64,6 +65,14 @@ h1 {
 
 .gamePlayButtons {
 	font-family: 'Slackey', cursive, sans-serif;
+}
+
+#gameButtons {
+	display: inline;
+}
+
+#gameButton {
+	display: inline;
 }
 
 #eatButton, #sleepButton, #boredomButton {

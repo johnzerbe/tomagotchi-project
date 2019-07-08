@@ -22,6 +22,7 @@ $("#playGameButton").click(function(){
             	$("#hungerPoints").text(game.currentPlayer.hunger);
             	if(game.currentPlayer.hunger >= 10){
 					clearInterval(timer);
+					$(".gameOver").css("display", "block");
 					$(".startPage").css("display", "none");
 					$(".gamePlay").css("display", "none");
 					$("#tooHungry").text(game.currentPlayer.name);
@@ -34,6 +35,7 @@ $("#playGameButton").click(function(){
             	$("#sleepPoints").text(game.currentPlayer.sleep);
             	if(game.currentPlayer.sleep >= 10){
 					clearInterval(timer);
+					$(".gameOver").css("display", "block");
 					$(".startPage").css("display", "none");
 					$(".gamePlay").css("display", "none");
 					$("#tooTired").text(game.currentPlayer.name);
@@ -46,6 +48,7 @@ $("#playGameButton").click(function(){
             	$("#boredomPoints").text(game.currentPlayer.boredom);
             	if(game.currentPlayer.boredom >= 10){
 					clearInterval(timer);
+					$(".gameOver").css("display", "block");
 					$(".startPage").css("display", "none");
 					$(".gamePlay").css("display", "none");
 					$("#tooBored").text(game.currentPlayer.name);
@@ -58,9 +61,15 @@ $("#playGameButton").click(function(){
             	$("#playerAge").text(game.currentPlayer.age);
             	if(game.currentPlayer.age >= 4){
             		$("#tomagotchiAnimation").attr("src", "https://media.giphy.com/media/yqMtk0TfjRa5W/giphy.gif");
+            		if(game.currentPlayer.age === 4){
+            			alert(`${game.currentPlayer.name} has leveled up!`);
+            		}
             		// $("#upgradeAnimation").css("display", "block");
             		if(game.currentPlayer.age >= 8){
             			$("#tomagotchiAnimation").attr("src", "https://static1.squarespace.com/static/513d5b0ee4b00efcff5951e6/513d7fd4e4b00efcff599ac2/5c587af0c83025e535dd1bac/1549302514045/EagerFaceDance.gif");
+            			if(game.currentPlayer.age === 8){
+            				alert(`${game.currentPlayer.name} has leveled up again!`);
+            			}
             		}
 				}
             }
@@ -90,6 +99,7 @@ const game = {
 }
 
 $(".gamePlay").css("display", "none");
+$(".gameOver").css("display", "none");
 $("#deadOverfed").css("display", "none");
 $("#deadOverslept").css("display", "none");
 $("#deadOfFun").css("display", "none");
@@ -102,7 +112,7 @@ $("#playGameButton").on("click", (e) => {
 	$(".gamePlay").css("display", "block");
 	game.createTomagotchi();
 	game.initLayout();
-	$("audio").attr("src", "spongebobBackground.mp3");
+	$("audio").attr("src", "livininthesunlight.mp3");
 });
 
 
@@ -112,6 +122,7 @@ $("#eatButton").on("click", (e) => {
 	$("#hungerPoints").text(game.currentPlayer.hunger);
 	if(game.currentPlayer.hunger < 0){
 		clearInterval(timer);
+		$(".gameOver").css("display", "block");
 		$(".startPage").css("display", "none");
 		$(".gamePlay").css("display", "none");
 		$("#overfed").text(game.currentPlayer.name);
@@ -126,6 +137,7 @@ $("#sleepButton").on("click", (e) => {
 	$("#sleepPoints").text(game.currentPlayer.sleep);
 	if(game.currentPlayer.sleep < 0){
 		clearInterval(timer);
+		$(".gameOver").css("display", "block");
 		$(".startPage").css("display", "none");
 		$(".gamePlay").css("display", "none");
 		$("#overslept").text(game.currentPlayer.name);
@@ -140,6 +152,7 @@ $("#boredomButton").on("click", (e) => {
 	$("#boredomPoints").text(game.currentPlayer.boredom);
 	if(game.currentPlayer.boredom < 0){
 		clearInterval(timer);
+		$(".gameOver").css("display", "block");
 		$(".startPage").css("display", "none");
 		$(".gamePlay").css("display", "none");
 		$("#tooMuchFun").text(game.currentPlayer.name);

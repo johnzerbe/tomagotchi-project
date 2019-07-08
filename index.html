@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Slackey&display=swap" rel="stylesheet">
+
+
+    <title>Spongebob Tomagotchi</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <audio controls loop>
+        <source src="spongebobIntro.mp3" type="audio/mp3" autostart="true" volume="60">
+      </audio>
+      <div class="gameInSession">
+        <div class="startPage">
+          <div class="row" id="first-row">
+            <div class="col-lg-12">
+              <h2>Who Lives In A Pineapple Under the Sea?</h2>
+              <h1>TOM-A-GOT-CHI!</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12" id="buttons">
+              <button type="button" class="btn btn-warning" id="playGameButton">PLAY GAME</button>
+
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-warning" id="instructions" data-toggle="modal" data-target="#instructionsModal">INSTRUCTIONS</button>
+
+                        <!-- Modal -->
+              <div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="instructionsModalLabel">INSTRUCTIONS</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Welcome to beloved Bikini Bottom!</p>
+                      <p>Once you click the PLAY GAME button, you will be given your very own Tomagotchi. Your job is to keep your Tomagotchi happy, healthy, awake, and most of all ALIVE!</p>
+                      <p>A display will appear in the upper left corner of the screen that will show you the different levels of the Tomagotchi's stats. All of them will begin at zero and increase at different intervals. Click the buttons that correspond to each stat in order to keep healthy levels of each. If any of the stats reach 10, or you go below zero, YOU LOSE!</p>
+                      <p>Now that you have the basics down, go enjoy your time in Bikini Bottom!</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              
+            </div>
+          </div>
+        </div>
+        <div class="gamePlay">
+          <div class="row">
+              <div class="col-lg-12">
+                <div class="statLevels">
+                  <!-- <h3 id="name"></h3> -->
+                  <h3><span id="displayName"></span> IS <span id="playerAge"></span> YEARS OLD</h3>
+                  <h3>HUNGER: <span id="hungerPoints">0</span></h3>
+                  <h3>SLEEP: <span id="sleepPoints">0</span></h3>
+                  <h3>BOREDOM: <span id="boredomPoints">0</span></h3>
+                </div>
+              </div>
+            </div>
+              <div class="row">
+              <div class="col-lg-2 col-md-4">
+                <div class="gamePlayButtons">
+                  <button type="button" class="btn btn-warning" id="eatButton">TIME FOR A KRABBY PATTY</button>
+                  <button type="button" class="btn btn-warning" id="sleepButton">GET SOME SLEEP</button>
+                  <button type="button" class="btn btn-warning" id="boredomButton">LET'S HAVE SOME F.U.N.</button>
+                </div>
+              </div>
+            </div>
+          <div class="row" id="animationRow">
+            <div class="col-lg-12">
+            <img src="http://31.media.tumblr.com/9e3d238055b6df0d73cc142e4b15c1f9/tumblr_mpxyjuoE3G1rdz68uo1_500.gif" id="tomagotchiAnimation">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gameOver">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2 col-md-6 offset-md-3 align-self-center" id="gameOverRow">
+            <div id="deadOverfed">
+              <h1><span id="overfed"></span> has died from overeating!</h1>
+            </div>
+            <div id="deadOverslept">
+              <h1><span id="overslept"></span> overslept and died in his sleep!</h1>
+            </div>
+            <div id="deadOfFun">
+              <h1><span id="tooMuchFun"></span> was having so much fun that he actually died from it!</h1>
+            </div>
+            <div id="deadOfHunger">
+              <h1><span id="tooHungry"></span> has died of starvation!</h1>
+            </div>
+            <div id="deadOfLackOfSleep">
+              <h1><span id="tooTired"></span> has died from getting too little sleep!</h1>
+            </div>
+            <div id="deadOfBoredom">
+              <h1><span id="tooBored"></span> has died of boredom!</h1>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <img src="https://66.media.tumblr.com/76b749ccf30071620a66b2ce1fd3f9de/tumblr_mlbb91MUJa1s5jjtzo1_400.gif" id="gameOverImage" class="fixed-bottom" style="display: none">
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>

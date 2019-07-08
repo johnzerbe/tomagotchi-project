@@ -107,7 +107,13 @@ h1 {
 	color: #FF4639;
 }
 
-
+#playerNameAndAge {
+	border: thin solid black;
+	display: inline-block;
+	border-radius: 25px;
+	padding: 15px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
 
 
 

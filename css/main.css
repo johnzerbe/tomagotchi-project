@@ -1,8 +1,15 @@
-.container-fluid {
-	background-image: url(https://wallpapercave.com/wp/wp2967401.jpg);
-	background-size: cover;
-	height: 100vh;
+body {
+		background-image: url(https://wallpapercave.com/wp/wp2967401.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		min-height: 100vh;
 }
+
+/*.container-fluid {*/
+/*	background-image: url(https://wallpapercave.com/wp/wp2967401.jpg);*/
+	/*background-size: cover;*/
+	/*height: 100vh;*/
+/*}*/
 
 #first-row {
 	text-align: center;
